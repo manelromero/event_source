@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  sse-server:
+  sse_server:
     build: .
-    image: sse-server-ruby
+    image: sse_server
     ports:
       - "3000:3000"
     volumes:

@@ -9,4 +9,4 @@ COPY . /app
 
 EXPOSE 3000
 
-CMD ["ruby", "sse-server.rb"]
+CMD ["ruby", "sse_server.rb"]

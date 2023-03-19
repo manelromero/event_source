@@ -13,7 +13,7 @@ end
 get '/events', provides: 'text/event-stream' do
   stream :keep_open do |out|
     EventMachine::PeriodicTimer.new(1) do
-      message = "Current time: #{Time.now.strftime('%H:%M:%S')}"
+      message = "=> #{Time.now.strftime('%H:%M:%S')}"
       out << "data: #{message}\n\n"
     end
   end
