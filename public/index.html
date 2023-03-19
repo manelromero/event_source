@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventSource Example</title>
+  </head>
+  <body>
+    <h1>JavaScript EventSource Example</h1>
+    <p>Server time: <span id="server-time">-</span></p>
+
+    <script>
+      const serverTimeElement = document.getElementById('server-time');
+
+      const source = new EventSource('/events');
+
+      source.onmessage = (event) => {
+        serverTimeElement.textContent = event.data;
+      };
+
+      source.onerror = (error) => {
+        console.error('EventSource error:', error);
+        serverTimeElement.textContent = '-';
+      };
+    </script>
+  </body>
+</html>
